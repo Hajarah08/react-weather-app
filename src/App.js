@@ -1,15 +1,26 @@
 
 import './App.css';
+import Weather from './Weather';
 
 function App() {
   return (
     <div className="App">
       <div className="container">
-      <h1>React Weather App</h1>
-
-      <footer>This project was created by Lawal Ajarat and it is <a href="https://github.com/Hajarah08/react-weather-app" target="_blank"> open-source</a></footer>
+       
+        <Weather />
+        <footer>
+          This project was created by Lawal Ajarat and it is{" "}
+          <a
+            href="https://github.com/Hajarah08/react-weather-app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            open-sourced on Github
+          </a>
+        </footer>
       </div>
-      </div>
+    </div>
   );
 }
 
