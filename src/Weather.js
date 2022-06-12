@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
+import { Puff } from "react-loader-spinner";
 import "./Weather.css"
 
 
@@ -52,9 +53,9 @@ const apiKey = "765f905a5ff48de4791afc288658166a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaulCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
-    return(
-      "Loading..."
-    )
+    return (
+      <Puff height="100" width="100" color="brown" ariaLabel="loading" />
+    );
 }
 
     
