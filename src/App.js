@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <div className="container">
        
-        <Weather defaulCity= "London"/>
+        <Weather defaulCity= "Lagos"/>
         <footer>
           This project was created by Lawal Ajarat and it is{" "}
           <a
