@@ -1,24 +1,61 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
 import "./Weather.css"
 
-export default function Weather(){
-    return (
-      <div className="Weather">
-        <form>
-          <input type="search" placeholder="Enter a city.." className="form" autoFocus="on" />
-          <input type="submit" value="Search" className=" search" />
-        </form>
-        <ul>
-          <li>Lagos, Nigeria</li>
-          <li>06/09/2022</li>
-        </ul>
-        <h1>☀️ 32</h1>
-        <p>Mostly Sunny</p>
-        <ul>
-          <li>Papitation</li>
-          <li>Humidity</li>
-          <li>Wind</li>
-        </ul>
-      </div>
-    );
+
+export default function Weather(props){
+  
+const [weatherData, setWeatherData] = useState({ready: false});
+
+function handleResponse(response){
+  console.log(response.data);
+setWeatherData({
+  ready: true,
+  temperature: response.data.main.temp,
+  humidity: response.data.main.humidity,
+  wind: response.data.wind.speed,
+  city: response.data.name,
+  description: response.data.weather[0].description,
+});
+
+  
+}
+
+if (weatherData.ready){
+  return (
+    <div className="Weather">
+      <form>
+        <input
+          type="search"
+          placeholder="Enter a city.."
+          className="form"
+          autoFocus="on"
+        />
+        <input type="submit" value="Search" className=" search" />
+      </form>
+      <ul className="date">
+        <li>{weatherData.city}</li>
+        <li>06/09/2022</li>
+      </ul>
+      <h1>☀️ {Math.round(weatherData.temperature)} ℃</h1>
+      <p className="text-capitalize">{weatherData.description}</p>
+      <ul className="component">
+        
+        <li>Humidity:{weatherData.humidity}%</li>
+        <li>Wind:{weatherData.wind}</li>
+      </ul>
+    </div>
+  );
+} else{
+const apiKey = "765f905a5ff48de4791afc288658166a";
+  
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaulCity}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return(
+      "Loading..."
+    )
+}
+
+    
 }
