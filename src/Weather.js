@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import { Puff } from "react-loader-spinner";
+import FormattedDate from "./FormattedDate";
 import "./Weather.css"
 
 
@@ -14,6 +15,7 @@ setWeatherData({
   ready: true,
   temperature: response.data.main.temp,
   humidity: response.data.main.humidity,
+  date: new Date(response.data.dt * 1000),
   wind: response.data.wind.speed,
   city: response.data.name,
   description: response.data.weather[0].description,
@@ -36,7 +38,7 @@ if (weatherData.ready){
       </form>
       <ul className="date">
         <li>{weatherData.city}</li>
-        <li>06/09/2022</li>
+        <li><FormattedDate date={weatherData.date} /></li>
       </ul>
       <h1>☀️ {Math.round(weatherData.temperature)} ℃</h1>
       <p className="text-capitalize">{weatherData.description}</p>
