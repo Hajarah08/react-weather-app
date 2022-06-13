@@ -14,7 +14,7 @@ Form{
     padding: 16px;
      background-color: antiquewhite;
      border: 1px solid #000;
-    border-radius: 15px ;
+    border-radius: 13px ;
     margin-top: 100px;
 }
 h1{
@@ -31,6 +31,8 @@ p{
     list-style: none;
     display: flex;
     justify-content: space-between;
+    font-size: 20px;
+  line-height: 19px;
 }
 .component{
     margin: 0;
@@ -44,4 +46,17 @@ p{
     color: pink;
     background: brown;
     margin-bottom: 20px;
+}
+.Weather canvas {
+  
+  margin-top: 2px;
+  display: inline-block;
+}
+.Weather .unit {
+  color: rgb(33, 33, 33);
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  line-height: 1;
+  top: -20px;
 }
