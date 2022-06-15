@@ -16,13 +16,13 @@ function App() {
           >
             {" "}
             open-sourced on Github
-          </a> <span>
+          </a> <span> and hosted on
           <a
             href="https://earnest-stroopwafel-794084.netlify.app/"
             target="_blank"
             rel="noreferrer"
           >
-            and  on Netlify
+            Netlify
           </a>
           </span>
         </footer>
