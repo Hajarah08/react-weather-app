@@ -21,13 +21,10 @@ function App() {
           <a
             href="https://github.com/Hajarah08/react-weather-app"
             target="_blank"
-            rel="noreferrer"
-          > and Netlify</a>
+            rel="noreferrer">
+           and Netlify</a>
     
-            target="_blank"
-            rel="noreferrer"
-          >
-            {" "}
+            
         </footer>
       </div>
     </div>
