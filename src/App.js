@@ -6,8 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-       
-        <Weather defaulCity= "Lagos"/>
+        <Weather defaulCity="Lagos" />
         <footer>
           This project was created by Lawal Ajarat and it is{" "}
           <a
@@ -17,14 +16,15 @@ function App() {
           >
             {" "}
             open-sourced on Github
-          </a>
+          </a> <span>
           <a
-            href="https://github.com/Hajarah08/react-weather-app"
+            href="https://earnest-stroopwafel-794084.netlify.app/"
             target="_blank"
-            rel="noreferrer">
-           and Netlify</a>
-    
-            
+            rel="noreferrer"
+          >
+            and  on Netlify
+          </a>
+          </span>
         </footer>
       </div>
     </div>
