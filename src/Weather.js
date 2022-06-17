@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import { Puff } from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import "./Weather.css"
 
 
@@ -13,6 +14,7 @@ function handleResponse(response){
   console.log(response.data);
 setWeatherData({
   ready: true,
+  coordinates: response.data.coord,
   temperature: response.data.main.temp,
   humidity: response.data.main.humidity,
   date: new Date(response.data.dt * 1000),
@@ -54,7 +56,7 @@ if (weatherData.ready){
         <input type="submit" value="Search" className=" search" />
       </form>
       <WeatherInfo data={weatherData} />
-      
+      <WeatherForecast  coordinates={weatherData.coordinates}/>
     </div>
   );
 } else{
